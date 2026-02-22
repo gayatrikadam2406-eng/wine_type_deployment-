@@ -10,7 +10,7 @@ Original file is located at
 import streamlit as st
 import joblib
 
-model = joblib.load("dtc_model.pkl")
+model =joblib.load("dtc_model.pkl")
 
 st.title("wine type prediction !")
 
@@ -45,6 +45,6 @@ input_data = pd.DataFrame({
 if st.button("predict"):
     prediction = model.predict(input_data)[0]
     if prediction == "white":
-      st.write("white wine")
+        st.success("white wine")
     else:
-      st.write("red wine")
+        st.error("red wine")
